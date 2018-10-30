@@ -1,0 +1,56 @@
+<h2>Création d'un nouvel utilisateur</h2>
+<br />
+
+<!--
+<%= form_for :user do |f| %>
+  Nom d'utilisateur : <%= f.text_field :username , placeholder: "Entrez votre nom d'utilisateur", class: 'form-control col-sm-9' %>	<br />
+  Email : <%= f.text_field :email , placeholder: "Entrez votre nom d'utilisateur", class: 'form-control col-sm-9' %><br />
+  Bio : <%= f.text_area :bio , placeholder: "Entrez votre nom d'utilisateur", class: 'form-control col-sm-9' %>	<br />
+  <%= f.submit 'Créer un nouvel utilisateur' %>
+<% end %>
+
+-->
+
+<div class="form-horizontal">
+	<%= form_tag url_for(action: 'create'), method: "post" do %>
+	
+	<div class='row center-block col-'>
+		<label class= 'col-sm-2  control-label'><%= label_tag 'Blase de rappeur :' %></label>
+		<%= text_field_tag 'username', @new_user.username, placeholder: "Entrez votre nom d'utilisateur", class: 'form-control col-sm-9' %>
+	</div>
+	<div class='row center-block'>
+		<label class= 'col-sm-2 control-label'><%= label_tag 'Email :' %></label>
+		<%= email_field_tag 'email', @new_user.email, placeholder:"Entrez votre email", class: 'form-control col-sm-9'%>
+	</div>
+	<div class='row center-block'>
+		<span class= 'col-sm-2 control-label'><%= label_tag 'Raconte-nous ta life :' %></span>
+		<%= text_area_tag 'bio', @new_user.bio, placeholder: 'Ma life en quelques lignes', class: 'form-control col-sm-9' %>
+	</div>
+	<br />
+	<div class='form-group center-block'>
+	<%= submit_tag "Créer mon compte", class: 'col-sm-offset-2 btn btn-info btn-lg btn-submit' %>
+	</div>
+
+	<% end %>
+
+</div>
+
+<!--
+<form action= 'create'  method='POST'>
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+	<label>Blase de rappeur : </label>
+	<input type='text' name='new_username' >
+	<br/>
+	
+	<label>Email : </label>
+	<input type='text' name='new_email' >
+	<br/>
+	
+	<label>	Raconte-nous ta life : </label>
+	<input type='text' name='new_bio' >
+	<br/>
+
+	<input type='submit'/>
+</form>
+-->
