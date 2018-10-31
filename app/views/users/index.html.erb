@@ -1,0 +1,14 @@
+<div class='container'>
+	<h1>BIENVENUE !</h1>
+	<p>Voici tous les utilisateurs inscrits sur cette app :</p>
+
+	<% @users.each_with_index do |user, i| %>
+		<div class='container'>
+			<%= link_to 'User n°'+(user.id.to_i).to_s, user_path(user), class:'col-2' %>
+      		<span class='col-2'> <%= user.username %> </span>
+     		<span class='col-2'> <%= user.email %> </span>
+      		<span class='col-6'> <%= user.bio %> </span>
+		</div>
+	<% end %>
+
+</div>

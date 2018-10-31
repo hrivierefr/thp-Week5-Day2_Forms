@@ -1,8 +1,13 @@
-<h3> Ceci est le dernier user ajouté à la base : n°<%= User.last.id %> </h3>
+<div class='container'>
 
-<p> <%= @user.username %> </p>
-<p> <%= @user.email %> </p>
-<p> <%= @user.bio %> </p>
+	<h3> Ceci est le dernier user ajouté à la base : n°<%= User.last.id %> </h3>
+
+	<p> <%= @user.username %> </p>
+	<p> <%= @user.email %> </p>
+	<p> <%= @user.bio %> </p>
 
 
-<%= link_to 'Créer un nouvel utilisateur', new_user_path, class: 'btn btn-default'%>
+	<%= link_to 'Créer un nouvel utilisateur', new_user_path, class: 'btn btn-default'%>
+	<%= link_to "Retour à l'accueil", root_path, class: 'btn btn-default'%>
+
+</div>
